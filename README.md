@@ -1,1 +1,2 @@
-# ghost-nginx-blog
+# ghost nginx blog
+

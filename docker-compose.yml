@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  nginx:
+    container_name: nginx-proxy
+    image: blog_nginx:latest
+    #restart: always
+    depends_on:
+      - ghost
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./nginxFile/nginx.conf:/etc/nginx/nginx.conf
+    networks:
+      - blogNetwork
+    stdin_open: true
+    tty: true
+    
+  ghost:
+    container_name: ghost-blog
+    image: ghost:latest
+    restart: always
+    hostname: ghost
+    ports:
+      - 3001:2368
+      - 2368:2368
+    volumes:
+      - ./ghostFile:/var/lib/ghost/content
+    networks:
+      - blogNetwork
+networks:
+  blogNetwork:
