@@ -19,3 +19,5 @@
 * (2019.December.4 14:41) 
 	* nginx https 동작, ghost 백업 복원
 	* 남은 상황 : 서버 재부팅 시 자동 실행, 인증서 자동 갱신, 업데이트 자동 실행
+* 2020.02.16
+  * Moving Repository
